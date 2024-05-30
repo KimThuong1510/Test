@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class SoTietKiem {
+  constructor(Maso, Loai_TK, Hoten, CMND, Ngaymo, Sotien) {
+    this.Maso = Maso;
+    this.Loai_TK = Loai_TK;
+    this.Hoten = Hoten;
+    this.CMND = CMND;
+    this.Ngaymo = Ngaymo;
+    this.Sotien = Sotien;
+  }
+
+    getMaso() {
+        return this.Maso;
+    }
+
+    setMaso(Maso) {
+        this.Maso = Maso;
+    }
+
+    getLoai_TK() {
+        return this.Loai_TK;
+    }
+
+    setLoai_TK(Loai_TK) {
+        this.Loai_TK = Loai_TK;
+    }
+
+    getHoten() {
+        return this.Hoten;
+    }
+
+    setHoten(Hoten) {
+        this.Hoten = Hoten;
+    }
+
+    getCMND() {
+        return this.CMND;
+    }
+
+    setCMND(CMND) {
+        this.CMND = CMND;
+    }
+
+    getNgaymo() {
+        return this.Ngaymo;
+    }
+
+    setNgaymo(Ngaymo) {
+        this.Ngaymo = Ngaymo;
+    }
+
+    getSotien() {
+        return this.Sotien;
+    }
+
+    setSotien(Sotien) {
+        this.Sotien = Sotien;
+    }
+    }
+
+let SoTietKiem1 = new SoTietKiem("abd23", "LoaiTk12", "Nguyễn Văn A", 123456, "15/03/2004", 12345000);
+let SoTietKiem2 = new SoTietKiem("abd22", "LoaiTk13", "Nguyễn Văn B", 124356, "15/03/2005", 2340000);
+let arr = [SoTietKiem1, SoTietKiem2];
+
+function Add() {
+    let Maso = prompt("Nhập mã số");
+    let Loai_TK = prompt("Nhập loại tài khoản");
+    let Hoten = prompt("Nhập họ và tên");
+    let CMND = prompt("Nhập chứng minh nhân dân");
+    let Ngaymo = prompt("Nhập ngày mở (dạng ngày/tháng/năm)");
+    let Sotien = prompt("Nhập số tiền");
+
+    let isValid = true;
+
+    if (Maso.length > 5) {
+        Maso = prompt("Nhập mã số");
+        isValid = false;
+    }
+
+    if (Loai_TK.length > 10) {
+        Loai_TK = prompt("Nhập loại tài khoản");
+        isValid = false;
+    }
+
+    if (Hoten.length > 30) {
+        Hoten = prompt("Nhập họ và tên");
+        isValid = false;
+    }
+
+    if (isNaN(CMND)) {
+        CMND = prompt("Nhập chứng minh nhân dân");
+        isValid = false;
+    }
+
+    if (isNaN(Sotien)) {
+        Sotien = prompt("Nhập số tiền");
+        isValid = false;
+    }
+
+    if (isValid) {
+        let addSoTietKiem = new SoTietKiem(Maso, Loai_TK, Hoten, CMND, Ngaymo, Sotien);
+        arr.push(addSoTietKiem);
+        return arr;
+    }
+}
+
+let resultadd = Add();
+document.write(resultadd);
+
+</script>
+</body>
+</html>
