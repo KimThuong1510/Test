@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function Phanso() {
+        let tuso_1 = +prompt("Nhập vào tử số thứ nhất");
+        let mauso_1 = + prompt("Nhập vào mẫu số thứ nhất");
+        let tuso_2 = +prompt("Nhập vào tử số thứ 2");
+        let mauso_2 = +prompt("Nhập vào mẫu thứ thứ 2");
+        let check = false;
+        if ( tuso_1*mauso_2 == tuso_2*mauso_1){
+            return true;
+        } else{
+            return false;
+        }
+        if ( check){
+            document.write("false" );
+        }else{
+            document.write("True ");
+        }
+    }
+    result = Phanso();
+    document.write(result );
+
+
+
+    
+</script>
+</body>
+</html>
